@@ -1,0 +1,96 @@
+@use 'variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-sans;
+  background: $bg;
+  color: $text;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border;
+  border-radius: 3px;
+}
+
+// Page layout
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: $space-xl $space-lg;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    padding: $space-lg $space-md;
+  }
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-xl;
+  gap: $space-md;
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $text;
+  }
+}
+
+// Transitions for routes
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $transition;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
